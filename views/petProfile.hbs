@@ -1,0 +1,46 @@
+<head>
+    <title>{{pet.name}}'s' Profile</title>
+      <link rel="stylesheet" href="css/petProfile.css">
+</head>
+
+<div class="container">
+    <a href="/petSearch_route" class="back-to-results">
+      <img src="/assets/arrow.png" alt="arrow" width="30" height="30">
+      <h3>Back To Results</h3>
+    </a>
+    </div>
+  <div class="profile-container">
+    <div class="left-section">
+        <div class="image-carousel">
+          <!-- Carousel of alternate images -->
+       
+          <div class="scroll-bar"></div> <!-- Purple scrollbar -->
+        </div>
+        <div class="profile-info">
+          <h3>Behaviors and Characteristics</h3>
+          <p class="description">{{pet.bnc}}</p>
+          <h3>Background</h3>
+          <p class="description">{{pet.background}}</p>
+        </div>
+      </div>
+      
+    <div class="right-section">
+      <div class="dog-image">
+        <img src="/assets/sample_dog.jpg" alt="Dog Image">
+      </div>
+      <div class="dog-info">
+        <h2>Hello, my name is {{pet.name}}</h2>
+        <p>
+          <span class="info-label">Age:</span> <span class="info-value">{{pet.age}}</span><br>
+          <span class="info-label">Species:</span> <span class="info-value">{{pet.species}}</span><br>
+          <span class="info-label">Type:</span> <span class="info-value">{{pet.breed}}</span><br>
+          <span class="info-label">Size:</span> <span class="info-value">{{pet.size}}</span><br>
+          <span class="info-label">Shelter:</span> <span class="info-value">{{pet.kennel_owner}}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <a id="message-button" href="messages.html">
+    <img src="/assets/message_icon.png" alt="Messages" width="80" height="80">
+  </a>
