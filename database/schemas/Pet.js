@@ -31,6 +31,7 @@ const PetSchema = new mongoose.Schema({
         type: String,
         required:true
     }
+    //add image src later
 })
 
 module.exports = mongoose.model('Pet', PetSchema)

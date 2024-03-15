@@ -1,7 +1,7 @@
 <head>
-    <title>Pet Profile</title>
+    <link rel="stylesheet" href="css/petSearch.css">
 </head>
-
+<body>
 <div class="header">
     <img src="assets/paw_icon.png" alt="Paw Logo" class="paw-logo">
     <div class="dropdowns">
@@ -58,36 +58,14 @@
 
 
   <div class="pet-container">
+    {{#each pets}}
     <div class="pet-profile">
-      <img src="assets/sample_dog.jpg" alt="Dog 1">
-      <h2>Dog 1</h2>
-      <p class="overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
+      <img src="assets/sample_dog.jpg" alt="{{name}}">
+      <h2>{{name}}</h2>
+      <p class="overflow-scroll">{{background}}</p>
       <a href="petProfile.html" class="see-profile-link">See Profile</a>
     </div>
-    <div class="pet-profile">
-      <img src="assets/sample_dog.jpg" alt="Dog 2">
-      <h2>Dog 2</h2>
-      <p class="overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile">
-      <img src="assets/sample_dog.jpg" alt="Dog 3">
-      <h2>Dog 3</h2>
-      <p class="overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile">
-      <img src="assets/sample_dog.jpg" alt="Dog 4">
-      <h2>Dog 4</h2>
-      <p class="overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile">
-      <img src="assets/sample_dog.jpg" alt="Dog 4">
-      <h2>Dog 5</h2>
-      <p class="overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
+    {{/each}}
     <!-- Repeat the above divs for the remaining dogs -->
   </div>
   <!-- Add more rows if needed -->
@@ -96,3 +74,4 @@
   </a>
   <a href="#">Back to Results</a>
   <script src="dropdownFill.js"></script>
+</body>

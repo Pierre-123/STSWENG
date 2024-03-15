@@ -21,7 +21,7 @@ router.post('/login', async function(req, res){// /login_route/login
             const result = req.body.password === login_user.password;
             if (result){
                 console.log('Login Success')
-                res.redirect('/petSearch.html');
+                res.redirect('/petSearch_route');
             } else {
                 console.log('Login Fail');
                 return res.render('login', { error: 'Invalid password', title: "Login Page" });
