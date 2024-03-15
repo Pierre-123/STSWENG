@@ -1,0 +1,98 @@
+<head>
+    <title>Pet Profile</title>
+</head>
+
+<div class="header">
+    <img src="assets/paw_icon.png" alt="Paw Logo" class="paw-logo">
+    <div class="dropdowns">
+      <!-- Row 1 -->
+      <div class="row">
+        <!-- Column 1 for species dropdown -->
+        <div class="column">
+          <label for="speciesDropdown">Species:</label>
+          <select id="speciesDropdown">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="bird">Bird</option>
+          </select>
+        </div>
+        <!-- Column 2 for breed dropdown -->
+        <div class="column">
+          <label for="breedDropdown">Breed:</label>
+          <select id="breedDropdown">
+          </select>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div class="row">
+        <!-- Column 1 for age dropdown -->
+        <div class="column">
+          <label for="ageDropdown">Age:</label>
+          <select id="ageDropdown">
+            <option value="below-1-year">Below 1 year</option>
+            <!-- Options for ages 1 to 15 will be added dynamically by JavaScript -->
+          </select>
+        </div>
+        <!-- Column 2 for size dropdown -->
+        <div class="column">
+          <label for="sizeDropdown">Size:</label>
+          <select id="sizeDropdown">
+            <option value="toy">Toy</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="extra-large">Extra Large</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- Sort by nearest or current location checkbox -->
+    <div class="sort-by-location">
+      <input type="checkbox" id="sort-by-location-checkbox">
+      <label for="sort-by-location-checkbox">Sort by nearest or current location</label>
+    </div>
+    <!-- Search button -->
+    <button id="search-button">Search</button>
+  </div>
+
+
+
+  <div class="pet-container">
+    <div class="pet-profile">
+      <img src="assets/sample_dog.jpg" alt="Dog 1">
+      <h2>Dog 1</h2>
+      <p class="overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
+      <a href="petProfile.html" class="see-profile-link">See Profile</a>
+    </div>
+    <div class="pet-profile">
+      <img src="assets/sample_dog.jpg" alt="Dog 2">
+      <h2>Dog 2</h2>
+      <p class="overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
+      <a href="petProfile.html" class="see-profile-link">See Profile</a>
+    </div>
+    <div class="pet-profile">
+      <img src="assets/sample_dog.jpg" alt="Dog 3">
+      <h2>Dog 3</h2>
+      <p class="overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
+      <a href="petProfile.html" class="see-profile-link">See Profile</a>
+    </div>
+    <div class="pet-profile">
+      <img src="assets/sample_dog.jpg" alt="Dog 4">
+      <h2>Dog 4</h2>
+      <p class="overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
+      <a href="petProfile.html" class="see-profile-link">See Profile</a>
+    </div>
+    <div class="pet-profile">
+      <img src="assets/sample_dog.jpg" alt="Dog 4">
+      <h2>Dog 5</h2>
+      <p class="overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
+      <a href="petProfile.html" class="see-profile-link">See Profile</a>
+    </div>
+    <!-- Repeat the above divs for the remaining dogs -->
+  </div>
+  <!-- Add more rows if needed -->
+  <a id="message-button" href="messages.html">
+    <img src="assets/message_icon.png" alt="Messages" width="80" height="80">
+  </a>
+  <a href="#">Back to Results</a>
+  <script src="dropdownFill.js"></script>
