@@ -1,0 +1,46 @@
+
+<head>
+<link rel="stylesheet" href="css/messages_style.css">
+</head>
+<body>
+    <div class="return-container">
+        <a href="petSearch.html" class="back-to-results">
+          <img src="assets/arrow.png" alt="arrow">
+          <h3>Back To Results</h3>
+        </a>
+    </div>
+    <div class="messaging-main">
+        <div class="chat-with-us">
+            <h1>Chat with us!</h1>
+            <img src="assets/paw_icon.png">
+        </div>
+        <div class="splitter">
+            <div class="previous-chat">
+                <div class="head"><h3>Previous Chats</h3></div>
+                <div class="chat-manager">
+                    {{#each chatContacts}}
+                        <div class="chat" onclick="showMessageLogs('{{this.contactId}}')">{{this.contactName}}</div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="current-chat">
+                <div class="current-chat-contact">
+                    <h3>{{selectedContactName}}</h3>
+                </div> <!-- same here, if no contacts yet, have it be like a default text or something-->
+                <div class="current-chat-details">
+                    <!-- dynamic!! more code!! mongodb!! -->
+                    {{#each selectedContactMessages}}
+                        <div class="{{this.senderType}}_msg">{{this.content}}</div>
+                    {{/each}}
+                    <!-- Note for later, have colors n stuff switched maybe, when user is a kennel or an adopter wise-->
+                </div> <!-- chat deets!-->
+                <div class="current-chat-input-container">
+                    <button class="attachments">File</button>
+                    <textarea maxlength="500" placeholder="Message Furever Partner..."></textarea> <!-- Maximum of 500 characters, for now -->
+                    <button class="send-button">Send</button>
+                </div> <!-- input for chatting-->
+            </div>
+        </div>
+    </div>
+    <script src="messages_script.js"></script>
+</body>

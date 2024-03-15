@@ -20,7 +20,8 @@ router.post('/login', async function(req, res){// /login_route/login
         if(login_user){
             const result = req.body.password === login_user.password;
             if (result){
-                console.log('Login Success')
+                console.log('Login Success');
+                req.session.userId = login_user._id;
                 res.redirect('/petSearch_route');
             } else {
                 console.log('Login Fail');

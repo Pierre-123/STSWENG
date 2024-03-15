@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const User = require('./schemas/User')
 const Pet = require('./schemas/Pet')
+const Message = require('./schemas/Messages')
 
 // Connect to MongoDB
 mongoose
@@ -10,6 +11,8 @@ mongoose
 
 //user_populate() //works
 //pet_populate() //works
+//populateMessages();
+
 //populate user mongodb test
 async function user_populate(){
     try{
@@ -46,5 +49,32 @@ async function pet_populate(){
         ])
     } catch (error) {
         console.log(e.message)
+    }
+}
+
+async function populateMessages() {
+    try {
+        // Find the users with usernames 'a' and 'b'
+        const sender = await User.findOne({ username: 'a' });
+        const receiver = await User.findOne({ username: 'aab' });
+
+        if (!sender || !receiver) {
+            console.log("Sender or receiver not found.");
+            return;
+        }
+
+        // Create some messages
+        const messages = [
+            { sender: sender._id, receiver: receiver._id, content: "Hello!", timestamp: new Date() },
+            { sender: receiver._id, receiver: sender._id, content: "Hi there!", timestamp: new Date() },
+            // Add more messages as needed
+        ];
+
+        // Insert messages into the database
+        await Message.insertMany(messages);
+
+        console.log("Messages populated successfully.");
+    } catch (error) {
+        console.error("Error populating messages:", error);
     }
 }
