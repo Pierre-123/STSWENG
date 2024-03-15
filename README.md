@@ -16,9 +16,5 @@ Group Members:
 
 * * *
 
-
-
-cd Webapp
-node app.js
-npm start - for unstable build atm
+npm start
 
