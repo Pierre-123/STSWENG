@@ -1,17 +1,21 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "express-handlebars": "^7.1.2",
     "handlebars": "^4.7.8",
     "mongoose": "^8.2.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "validator": "^13.11.0"
   },
   "scripts": {
     "start": "nodemon app.js"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
   }
 }

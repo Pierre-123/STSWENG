@@ -8,6 +8,20 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+    "overrides": [
+        {
+            "files": ["./routes/**/*.js", "./database/**/*.js"],
+            "rules": {
+                "no-invalid-this": "off"
+            }
+        },
+        {
+            "files": ["./routes/**/*.js"],
+            "rules": {
+                "new-cap": "off"
+            }
+        }
+    ],
     "rules": {
     }
 }
