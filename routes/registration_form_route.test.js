@@ -1,12 +1,15 @@
 const request = require('supertest');
 const express = require('express');
 const bodyParser = require('body-parser');
-// Adjust the path as necessary
-const User = require('../database/schemas/User');
-// Adjust the path as necessary
-const registrationRouter = require('../routes/registration');
-const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const {connect, closeDatabase, clearDatabase} = require('../test/TestDB');
+const User = require('../database/schemas/User');
+const registrationRouter = require('../routes/registration_form_route');
+// Assuming this is your initial selection route
+const initialSelectionRouter = require('../routes/registration_route');
+
+// Mock mongoose model for User
+jest.mock('../database/schemas/User');
 
 // Setup a test Express app
 const app = express();
@@ -14,20 +17,37 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs'); // Assuming you are using EJS
 app.use('/register', registrationRouter);
+// Setup route for initial role selection
+app.use('/initial-selection', initialSelectionRouter);
 
-// Mock mongoose model for User
-jest.mock('../database/schemas/User');
+beforeAll(async () => await connect());
 
-beforeAll(async () => {
-  // Connect to a Mongo DB
+afterEach(async () => await clearDatabase());
+
+afterAll(async () => await closeDatabase());
+
+describe('Initial Role Selection Page', () => {
+  it('should load the initial role selection page', async () => {
+    const response = await request(app).get('/registration_route');
+    expect(response.statusCode).toBe(200);
+    // Checking for content specific to the initial role selection page
+    expect(response.text).toContain('I am...');
+  });
+
+  it('should accept role selection and direct to the registration form',
+      async () => {
+        const roleSelection = await request(app)
+        // Simulating selection and redirection
+            .get('/register?role=adopter');
+
+        expect(roleSelection.statusCode).toBe(200);
+        expect(roleSelection.text).toContain('Registration Form');
+        // Ensure the role is correctly passed to the form
+        expect(roleSelection.text).toContain('adopter');
+      });
 });
 
-afterAll(async () => {
-  // Disconnect from the Mongo DB
-  await mongoose.connection.close();
-});
-
-describe('Registration Route', () => {
+describe('Registration Form Submission', () => {
   it('should reject registration with invalid email format', async () => {
     const userData = {
       username: 'testuser',
@@ -72,13 +92,8 @@ describe('Registration Route', () => {
         .post('/register')
         .send(userData);
 
-    /*
-     Assuming you redirect users to a
-     login page or similar on successful registration
-    */
     expect(response.statusCode).toBe(302);
     expect(response.headers.location).toBe('/login');
   });
-
-  // Can use more test
+  // Additional tests can be added as needed
 });

@@ -1,0 +1,50 @@
+const mongoose = require('mongoose');
+const {MongoMemoryServer} = require('mongodb-memory-server');
+
+let mongoMemoryServer;
+
+/**
+ * Connects to a dummy server.
+ */
+async function connect() {
+  // Create an instance of the in-memory MongoDB server
+  mongoMemoryServer = await MongoMemoryServer.create();
+
+  // Get the URI of the in-memory MongoDB instance
+  const uri = mongoMemoryServer.getUri();
+
+  // Connect Mongoose to the in-memory server
+  await mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+}
+
+/**
+ * Closes the dummy server, preventing memory leaks.
+ */
+async function closeDatabase() {
+  // Disconnect Mongoose from the in-memory server
+  await mongoose.connection.dropDatabase();
+  await mongoose.connection.close();
+
+  // Stop the in-memory MongoDB server
+  await mongoMemoryServer.stop();
+}
+
+/**
+ * Clears the dummy database.
+ */
+async function clearDatabase() {
+  // Clear all data after each test
+  const collections = mongoose.connection.collections;
+  for (const key in collections) {
+    // Check if the property belongs to the object itself
+    if (collections.hasOwnProperty(key)) {
+      const collection = collections[key];
+      await collection.deleteMany({});
+    }
+  }
+}
+
+module.exports = {connect, closeDatabase, clearDatabase};

@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 // const mongoose = require('mongoose');
 const exphbs = require('express-handlebars');
 
@@ -10,6 +11,12 @@ app.use(express.static('public'));
 app.use(express.json());
 // more middle ware for URL-encoded bodies
 app.use(express.urlencoded({extended: true}));
+
+app.use(session({
+  secret: '7627819857069865',
+  resave: false,
+  saveUninitialized: false,
+}));
 
 // Routes
 const regisRoute = require('./routes/registration_route');
@@ -44,3 +51,5 @@ app.use((req, res, next)=>{// should spy n see the get stuff but idk what???
   console.log(`${req.method}:${req.url}`);// log method and url, GET:/users
   next();
 });
+
+
