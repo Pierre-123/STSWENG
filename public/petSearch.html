@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@700&family=Inria+Sans&family=Junge&display=swap" rel="stylesheet">
   <script src="searchProfile.js"></script>
-
 </head>
 <body>
   <div class="header">
@@ -41,7 +40,7 @@
         <div class="column">
           <label for="ageDropdown">Age:</label>
           <select id="ageDropdown">
-            <option value="below-1-year">Below 1 year</option>
+            <option value="below-1-year">Any</option>
             <!-- Options for ages 1 to 15 will be added dynamically by JavaScript -->
           </select>
         </div>
@@ -49,6 +48,7 @@
         <div class="column">
           <label for="sizeDropdown">Size:</label>
           <select id="sizeDropdown">
+            <option value="toy">Any</option>
             <option value="toy">Toy</option>
             <option value="small">Small</option>
             <option value="medium">Medium</option>
@@ -67,90 +67,6 @@
     <button id="search-button">Search</button>
   </div>
   <div class="pet-container">
-    <div class="pet-profile dog-profile" data-breed="Labrador">
-      <img src="assets/sample_dog.jpg" alt="Dog 1">
-      <h2>Dog 1</h2>
-      <p class="overflow-scroll"> I am a Labrador Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile dog-profile" data-breed="Shih Tzu">
-      <img src="assets/sample_dog.jpg" alt="Dog 2">
-      <h2>Dog 2</h2>
-      <p class="overflow-scroll">I am a Shih Tzu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile dog-profile" data-breed="Mini Poodle">
-      <img src="assets/sample_dog.jpg" alt="Dog 3">
-      <h2>Dog 3</h2>
-      <p class="overflow-scroll">I am a Mini Poodle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <!-- Remaining dog profiles -->
-    
-    <div class="pet-profile cat-profile" data-breed="Ragdoll">
-      <img src="assets/sample_cat.jpg" alt="Cat 1">
-      <h2>Cat 1</h2>
-      <p class="overflow-scroll">I am a Ragdoll Cat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile cat-profile" data-breed="Siamese">
-      <img src="assets/sample_cat.jpg" alt="Cat 2">
-      <h2>Cat 2</h2>
-      <p class="overflow-scroll">I am a Siamese Cat Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile cat-profile" data-breed="Maine Coon">
-      <img src="assets/sample_cat.jpg" alt="Cat 3">
-      <h2>Cat 3</h2>
-      <p class="overflow-scroll">I am a Maine Coon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <!-- Remaining cat profiles -->
-    
-    <div class="pet-profile bird-profile" data-breed="Parrot">
-      <img src="assets/sample_bird.jpg" alt="Bird 1">
-      <h2>Bird 1</h2>
-      <p class="overflow-scroll">I am a Parrot! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile bird-profile" data-breed="Parakeet">
-      <img src="assets/sample_bird.jpg" alt="Bird 1">
-      <h2>Bird 2</h2>
-      <p class="overflow-scroll">I am a parakeet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile bird-profile" data-breed="Cockatoo">
-      <img src="assets/sample_bird.jpg" alt="Bird 1">
-      <h2>Bird 3</h2>
-      <p class="overflow-scroll">I am a Cockatoo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <!-- Remaining bird profiles -->
-    
-    <div class="pet-profile hamster-profile" data-breed="Syrian">
-      <img src="assets/sample_hamster.jpg" alt="Hamster 1">
-      <h2>Hamster 1</h2>
-      <p class="overflow-scroll">I am a Syrian Hamster Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile hamster-profile" data-breed="Dwarf">
-      <img src="assets/sample_hamster.jpg" alt="Hamster 1">
-      <h2>Hamster 2</h2>
-      <p class="overflow-scroll">I am a Dwarf Hamster Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <div class="pet-profile hamster-profile" data-breed="Roborovski">
-      <img src="assets/sample_hamster.jpg" alt="Hamster 1">
-      <h2>Hamster 3</h2>
-      <p class="overflow-scroll">I am a Roborovski Hamster Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-      <a href="petProfile.html" class="see-profile-link">See Profile</a>
-    </div>
-    <!-- Remaining hamster profiles -->
-</div>
-<!-- Add more rows if needed -->
-<a id="message-button" href="messages.html">
-  <img src="assets/message_icon.png" alt="Messages" width="80" height="80">
-</a>
-<a href="#">Back to Results</a>
-</body>
-</html>
+    <!-- Add dynamically generated links for each pet profile -->
+    <!-- Iterate over petData to generate links -->
+  </div>

@@ -21,13 +21,10 @@ const PetSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  bnc: { // Behaviors and Characteristics
+  behaviorsAndCharacteristics: { // Behaviors and Characteristics
     type: String,
   },
-  background: {
-    type: String,
-  },
-  kennel_owner: { // Username of Kennel
+  shelter: { // Username of Kennel
     type: String,
     required: true,
   },

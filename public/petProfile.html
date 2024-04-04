@@ -1,52 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dog Profile</title>
+  <title>Pet Profile</title>
   <link rel="stylesheet" href="css/petProfile.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@700&family=Inria+Sans&family=Junge&display=swap" rel="stylesheet">
+  <script src="PetProfile.js" defer></script> 
 </head>
 <body style="background-color: #F5F5F5;">
-    <div class="container">
+  <div class="container">
     <a href="petSearch.html" class="back-to-results">
       <img src="assets/arrow.png" alt="arrow" width="30" height="30">
       <h3>Back To Results</h3>
     </a>
-  <div class="profile-container">
-    <div class="left-section">
-        <div class="image-carousel">
-          <!-- Carousel of alternate images -->
-       
-          <div class="scroll-bar"></div> <!-- Purple scrollbar -->
-        </div>
-        <div class="profile-info">
-          <h3>Behaviors and Characteristics</h3>
-          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-          <h3>Background</h3>
-          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et enim fringilla auctor.</p>
-        </div>
+    <div class="profile-container">
+      <div class="left-section">
+        <img id="petImageLeft" src="" alt="Pet Image">
+        <h2 id="petNameLeft"></h2>
+        <p id="petSpeciesLeft"></p>
+        <p id="petBreedLeft"></p>
+        <p id="petDescriptionLeft"></p>
       </div>
-      
-    <div class="right-section">
-      <div class="dog-image">
-        <img src="assets/sample_dog.jpg" alt="Dog Image">
-      </div>
-      <div class="dog-info">
-        <h2>Hello, my name is (Dog's Name)</h2>
-        <p>
-          <span class="info-label">Age:</span> <span class="info-value">1 year old</span><br>
-          <span class="info-label">Species:</span> <span class="info-value">Dog</span><br>
-          <span class="info-label">Type:</span> <span class="info-value">Terrier</span><br>
-          <span class="info-label">Size:</span> <span class="info-value">Medium</span><br>
-          <span class="info-label">Shelter:</span> <span class="info-value">ABC Shelter</span>
-        </p>
+      <div class="right-section">
+        <div class="dog-info">
+          <h2>Hello, my name is <span id="petNameRight"></span></h2>
+          <p>
+            <span class="info-label">Age:</span> <span class="info-value" id="petAge"></span><br>
+            <span class="info-label">Species:</span> <span class="info-value" id="petSpeciesRight"></span><br>
+            <span class="info-label">Breed:</span> <span class="info-value" id="petBreedRight"></span><br>
+            <span class="info-label">Size:</span> <span class="info-value" id="petSize"></span><br>
+            <span class="info-label">Shelter:</span> <span class="info-value" id="petShelter"></span>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
   </div>
   <a id="message-button" href="messages.html">
     <img src="assets/message_icon.png" alt="Messages" width="80" height="80">

@@ -1,33 +1,32 @@
-// Sample data for a dog
-const dogData = {
-  name: 'Buddy',
-  age: '2 years old',
-  species: 'Dog',
-  type: 'Golden Retriever',
-  size: 'Large',
-  shelter: 'XYZ Shelter',
-  behaviors: 'Friendly, energetic',
-  background: 'Buddy was found as a stray and brought to the shelter.',
-  image: 'sample_dog.jpg', // Assuming the image file is in the assets folder
-};
+document.addEventListener('DOMContentLoaded', () => {
+  // Parse query parameters from the URL
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
 
-/**
-   * Function to update dog profile.
-   * @param {dogData} data - Data of the dog.
-*/
-function updateDogProfile(data) {
-  document.getElementById('dog-name-placeholder').innerText =
-  'Hello, my name is ' + data.name;
-  document.getElementById('age-placeholder').innerText = data.age;
-  document.getElementById('species-placeholder').innerText = data.species;
-  document.getElementById('type-placeholder').innerText = data.type;
-  document.getElementById('size-placeholder').innerText = data.size;
-  document.getElementById('shelter-placeholder').innerText = data.shelter;
-  document.getElementById('behaviors-characteristics-placeholder').innerText =
-  data.behaviors;
-  document.getElementById('background-placeholder').innerText = data.background;
-  document.getElementById('dog-image-placeholder').src = 'assets/' + data.image;
-}
+  // Get pet data from query parameters
+  const petNameLeft = urlParams.get('name');
+  const petSpeciesLeft = urlParams.get('species');
+  const petBreedLeft = urlParams.get('breed');
+  const petSize = urlParams.get('sizeParam');
+  const petShelter = urlParams.get('shelterParam');
+  const petImageLeft = decodeURIComponent(urlParams.get('image'));
+  const petDescriptionLeft = decodeURIComponent(urlParams.get('description'));
+  const petAge = urlParams.get('age');
 
-// Call the function with the sample data
-updateDogProfile(dogData);
+
+  // Populate HTML elements with pet data
+  document.getElementById('petNameLeft').textContent = petNameLeft;
+  document.getElementById('petSpeciesLeft').textContent = petSpeciesLeft;
+  document.getElementById('petBreedLeft').textContent = petBreedLeft;
+  document.getElementById('petDescriptionLeft').textContent = petDescriptionLeft;
+  document.getElementById('petImageLeft').src = petImageLeft;
+  document.getElementById('petSize').textContent = petSize;
+  document.getElementById('petShelter').textContent = petShelter;
+  // Set the pet's name for the right section
+  document.getElementById('petNameRight').textContent = petNameLeft;
+
+  // Set other pet details for the right section
+  document.getElementById('petSpeciesRight').textContent = petSpeciesLeft;
+  document.getElementById('petBreedRight').textContent = petBreedLeft;
+  document.getElementById('petAge').textContent = petAge;
+});

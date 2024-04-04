@@ -1,95 +1,134 @@
-input[type="text"], input[type="password"], textarea {
-  border: none;
-  outline: none;
-  border-bottom: 2px solid black; 
+body {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f3f3f3;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Junge', sans-serif;
+  font-weight: normal;
+  margin-bottom: 10px;
 }
 
 #head {
-    height: min-content;
-    width: min(1300px, 90vw);
-    margin: 5vh auto;
-    border: 3px solid var(--dark-blue);
-    display: flex;
-    justify-content: center;
-  }
-  #head-left {
-    position: relative;
-    left: 0px;
-    margin: 3rem 5rem;
-  }
-  #head-left p {
-    text-align: left; 
-    margin-bottom: 10px;
-    margin-top: 0;
-  }
-  #head-left input {
-    width: 150%;
-  }
-  #head-right {
-    height: auto;
-    position: relative;
-    right: 0px;
-    top: 2rem;
-    margin: 3rem 5rem;
-  }
+  height: min-content;
+  width: min(1300px, 90vw);
+  margin: 5vh auto;
+  border: 3px solid var(--dark-blue);
+  display: flex;
+  justify-content: center;
+}
+
+#head-left {
+  position: relative;
+  left: 0px;
+  margin: 3rem 5rem;
+}
+
+#head-left p {
+  text-align: left;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+#head-left input {
+  width: 100%;
+}
+
+#head-right {
+  height: auto;
+  position: relative;
+  right: 0px;
+  top: 2rem;
+  margin: 3rem 5rem;
+}
 
 .dropdowns {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px; /* Add margin bottom for spacing */
-  }
-  /* Style the dropdown content */
-  .dropdown-content {
-    background-color: #C7BCD3; /* Setting background color of dropdown content */
-  }
-  .row {
-    display: flex;
-  }
-  .column {
-    flex: 1;
-    margin-right: 10px;
-  }
-  .column select {
-    width: 100%; /* Make dropdowns take up full width */
-    padding: 8px; /* Increase padding for better appearance */
-    font-size: 16px; /* Increase font size for better readability */
-  }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+  background-color: #C7BCD3;
+  /* Setting background color of dropdown content */
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.column select {
+  width: 100%;
+  /* Make dropdowns take up full width */
+  padding: 8px;
+  /* Increase padding for better appearance */
+  font-size: 16px;
+  /* Increase font size for better readability */
+}
 
 #body {
-    height: min-content;
-    width: min(1300px, 90vw);
-    margin: 0 auto;
-    border: 3px solid var(--dark-blue);
-    padding: 20px;
-    display: flex;
-  }
-  #textareas {
-    width: 100%;
-  }
-  #buttons {
-    width: 50%;
-    
-  }
-  .pet-form input[type="submit"] {
-    width: 30%;
-    margin: auto;
-    padding: 10px;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  .pet-form input[type="submit"]:hover {
-    background: var(--dark-blue);
-  }
-  .pet-form input[type="button"] {
-    background-color: var(--opaque);
-    width: 30%;
-    margin: auto;
-    padding: 10px;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  .pet-form input[type="button"]:hover {
-    background: var(--violet);
-  }
+  height: min-content;
+  width: min(1300px, 90vw);
+  margin: 0 auto;
+  border: 3px solid var(--dark-blue);
+  padding: 20px;
+  display: flex;
+}
+
+#textareas {
+  width: 50%;
+  margin-right: 5%;
+}
+
+#textareas textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 18px;
+  resize: vertical;
+}
+
+#buttons {
+  width: 35%;
+}
+
+.pet-form input[type="submit"] {
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.pet-form input[type="submit"]:hover {
+  background: var(--dark-blue);
+}
+
+.pet-form input[type="button"] {
+  background-color: var(--opaque);
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.pet-form input[type="button"]:hover {
+  background: var(--violet);
+}

@@ -4,37 +4,36 @@ const User = require('./schemas/User');
 // Connect to MongoDB
 mongoose
     .connect('mongodb://127.0.0.1:27017/STSWENG')
-    .then(() => console.log('Connected to MongoDB'))
+    .then(async () => {
+        console.log('Connected to MongoDB');
+        // Populate users
+        await userPopulate();
+    })
     .catch((err) => console.error('Could not connect to MongoDB', err));
 
 /**
  * Populates test users
  */
 async function userPopulate() {
-  try {
-    User.insertMany([
-      {username: 'Test', password: '12345', email: 'a@a.com', role: 'adopter'},
-      {username: 'Test2', password: '123456', email: 'b@b.com',
-        role: 'adoptee'},
-    ]);
-  } catch (e) {
-    console.log(e.message);
-  }
+    try {
+        await User.insertMany([
+            { username: 'Test', password: '12345', email: 'a@a.com', role: 'adopter' },
+            { username: 'Test2', password: '123456', email: 'b@b.com', role: 'adoptee' },
+        ]);
+        console.log('Test users populated successfully.');
+    } catch (e) {
+        console.log('Error populating test users:', e.message);
+    }
 }
 
 /**
  * Deletes users
  */
 async function usersDelete() {
-  try {
-    User.deleteMany({})
-        .then((result) => {
-          console.log(`Refreshed ${result.deletedCount} users`);
-        })
-        .catch((error) => {
-          console.error('Error deleting users:', error);
-        });
-  } catch (e) {
-    console.log(e.message);
-  }
+    try {
+        await User.deleteMany({});
+        console.log('All users deleted successfully.');
+    } catch (e) {
+        console.error('Error deleting users:', e);
+    }
 }
